@@ -2,40 +2,36 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Angel DTP Operators — Desktop Publishing & Graphic Design</title>
-  <meta name="description" content="Angel DTP Operators — professional DTP, typing, book layout, graphic design, and video editing. Fast, accurate and affordable." />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>Angel DTP — Design • Type • Publish</title>
+  <meta name="description" content="Angel DTP — professional DTP, typing, book layout, graphic design and video editing. Get a quick quote today." />
+  <meta name="theme-color" content="#F29B45" />
 
-  <!-- Fonts (change if you prefer) -->
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
-  <!-- Main stylesheet -->
+  <!-- Main stylesheet (we'll update it next) -->
   <link rel="stylesheet" href="style.css" />
-  <meta name="theme-color" content="#F29B45" />
 </head>
 <body>
-  <!-- Skip link for a11y -->
+  <!-- Skip link -->
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- SITE HEADER / NAV -->
+  <!-- Header -->
   <header class="site-header" role="banner">
     <div class="container header-inner">
       <a class="brand" href="/" aria-label="Angel DTP home">
-        <!-- replace with <img src="logo.svg" alt="Angel DTP"> for real logo -->
         <div class="brand-mark" aria-hidden="true">🟠✒️</div>
         <div class="brand-text">
           <span class="brand-name">Angel DTP</span>
-          <span class="brand-sub">Operators</span>
+          <span class="brand-sub">Operators</span> <!-- hidden on mobile via CSS -->
         </div>
       </a>
 
-      <button id="navToggle" class="nav-toggle" aria-expanded="false" aria-controls="primaryNav" aria-label="Open navigation">
-        <span class="hamburger" aria-hidden="true"></span>
-      </button>
-
-      <nav id="primaryNav" class="primary-nav" role="navigation" aria-label="Primary navigation" aria-hidden="true">
+      <!-- Desktop nav (visible on wide screens) -->
+      <nav id="primaryNav" class="primary-nav desktop-only" role="navigation" aria-label="Primary">
         <ul class="nav-list">
           <li><a class="nav-link" href="#home">Home</a></li>
           <li><a class="nav-link" href="#services">Services</a></li>
@@ -45,16 +41,67 @@
           <li><a class="nav-link" href="#contact">Contact</a></li>
         </ul>
       </nav>
+
+      <!-- Mobile controls -->
+      <div class="mobile-controls">
+        <!-- three-dot button opens side drawer -->
+        <button id="drawerToggle" class="drawer-toggle" aria-controls="sideDrawer" aria-expanded="false" aria-label="Open menu">
+          ⋯
+        </button>
+
+        <!-- standard hamburger (optional: opens small top nav) -->
+        <button id="navToggle" class="nav-toggle mobile-only" aria-expanded="false" aria-controls="mobileNav" aria-label="Toggle navigation">
+          <span class="hamburger" aria-hidden="true"></span>
+        </button>
+      </div>
     </div>
   </header>
 
-  <!-- MAIN -->
+  <!-- SIDE DRAWER (mobile) -->
+  <aside id="sideDrawer" class="side-drawer" aria-hidden="true" role="dialog" aria-label="Menu">
+    <div class="drawer-inner">
+      <button id="drawerClose" class="drawer-close" aria-label="Close menu">✕</button>
+
+      <div class="drawer-brand">
+        <div class="brand-mark">🟠✒️</div>
+        <div class="brand-name">Angel DTP</div>
+      </div>
+
+      <nav class="drawer-nav" aria-label="Drawer navigation">
+        <ul>
+          <li><a href="#home" class="drawer-link">Home</a></li>
+          <li><a href="#services" class="drawer-link">Services</a></li>
+          <li><a href="#graphic" class="drawer-link">Graphic Design</a></li>
+          <li><a href="#portfolio" class="drawer-link">Portfolio</a></li>
+          <li><a href="#pricing" class="drawer-link">Pricing</a></li>
+          <li><a href="#contact" class="drawer-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="drawer-contact">
+        <h4>Quick Contact</h4>
+        <p><a href="tel:+919785723624">📞 +91 97857 23624</a></p>
+        <p><a href="mailto:angeldtp54@gmail.com">✉ angeldtp54@gmail.com</a></p>
+        <p><a href="https://www.angeldp.in" target="_blank" rel="noopener">🌐 angeldp.in</a></p>
+      </div>
+
+      <div class="drawer-actions">
+        <a class="btn btn-primary drawer-cta" href="#contact">Get a Quote</a>
+        <a class="btn btn-outline drawer-cta" href="https://wa.me/919785723624" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+
+    <!-- overlay area that closes drawer on click -->
+    <div class="drawer-overlay" tabindex="-1" data-action="close-drawer"></div>
+  </aside>
+
+  <!-- Main content -->
   <main id="main" role="main">
     <!-- HERO -->
     <section id="home" class="hero" aria-label="Hero">
       <div class="container hero-grid">
         <div class="hero-copy">
-          <div class="eyebrow badge-accent">Angel DTP — Operators</div>
+          <div class="eyebrow badge-accent">Angel DTP</div>
           <h1 class="hero-title">Design. Type. Publish.</h1>
           <p class="hero-lead">Desktop publishing, typing, book layout, branding and social creatives — accurate, print-ready and delivered on time. English & Hindi support.</p>
 
@@ -69,82 +116,84 @@
             <li>✅ Source files on request</li>
           </ul>
 
-          <!-- quick contact -->
-          <div class="hero-quick">
-            <a href="tel:+919785723624" class="hero-phone" aria-label="Call Angel DTP">📞 +91 97857 23624</a>
-            <a href="mailto:angeldtp54@gmail.com" class="hero-mail">✉️ angeldtp54@gmail.com</a>
+          <!-- Minimal contact CTA on mobile (actual numbers hidden on small screens) -->
+          <div class="hero-actions-mobile mobile-only">
+            <a class="mini-cta" href="tel:+919785723624" aria-label="Call us">Call</a>
+            <a class="mini-cta" href="https://wa.me/919785723624" aria-label="WhatsApp">WhatsApp</a>
           </div>
         </div>
 
         <div class="hero-visual">
           <div class="hero-card" role="img" aria-label="Design sample">
-            <!-- keep a relevant image; fallback to img1 -->
-            <img src="img1.jpeg" alt="Sample graphic design" loading="lazy">
+            <img src="img1.jpeg" alt="Design sample" loading="lazy">
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SERVICES (expanded) -->
+    <!-- SERVICES (with progressive disclosure on mobile) -->
     <section id="services" class="section" aria-label="Services">
       <div class="container">
         <div class="section-head">
           <h2>Services</h2>
-          <p>We provide end-to-end DTP and creative services. Small jobs or bulk projects — we handle both.</p>
+          <p>End-to-end DTP and creative services. Small jobs or bulk projects — we handle both.</p>
         </div>
 
-        <div class="cards-grid" role="list">
-          <!-- Card 1 -->
-          <article class="card" role="listitem">
+        <!-- on mobile show preview then "Show more" -->
+        <div class="cards-grid preview-only" data-preview-count="3">
+          <!-- card 1 -->
+          <article class="card">
             <div class="card-icon">⌨️</div>
             <h3>English & Hindi Typing</h3>
             <p>Fast, accurate typing of scanned pages, handwritten notes, and recorded audio — delivered in Word or PDF.</p>
           </article>
 
-          <!-- Card 2 -->
-          <article class="card" role="listitem">
+          <!-- card 2 -->
+          <article class="card">
             <div class="card-icon">📄</div>
             <h3>Paper / Document Typing</h3>
             <p>Proofread documents with consistent formatting — academic, legal, business or custom templates.</p>
           </article>
 
-          <!-- Card 3 -->
-          <article class="card" role="listitem">
+          <!-- card 3 -->
+          <article class="card">
             <div class="card-icon">📚</div>
             <h3>Book Layout & Publishing</h3>
             <p>Manuscript formatting, TOC, page layout, cover design and print/eBook preparation.</p>
           </article>
 
-          <!-- Card 4 -->
-          <article class="card" role="listitem">
+          <!-- remainder (hidden on mobile preview) -->
+          <article class="card more-hide">
             <div class="card-icon">🖼️</div>
             <h3>Graphic Design</h3>
-            <p>Logos, posters, social creatives, banners and brand kits. Quick mockups and source files provided.</p>
+            <p>Logos, posters, social creatives, banners and brand kits. Source files provided on request.</p>
           </article>
 
-          <!-- Card 5 -->
-          <article class="card" role="listitem">
+          <article class="card more-hide">
             <div class="card-icon">🎬</div>
             <h3>Video Editing</h3>
-            <p>Short promo clips, YouTube edits, and social-ready videos with captions and transitions.</p>
+            <p>Short promo clips, YouTube edits and social-ready videos with captions and transitions.</p>
           </article>
 
-          <!-- Card 6 -->
-          <article class="card" role="listitem">
+          <article class="card more-hide">
             <div class="card-icon">📊</div>
             <h3>Data Typist & Entry</h3>
-            <p>Bulk data entry, spreadsheets, and CSV delivery with QA checks.</p>
+            <p>Bulk data entry and spreadsheet delivery with QA checks.</p>
           </article>
+        </div>
+
+        <div class="more-controls">
+          <button class="btn btn-outline show-more" data-target=".more-hide">Show all services</button>
         </div>
       </div>
     </section>
 
-    <!-- DEDICATED GRAPHIC DESIGN -->
-    <section id="graphic" class="graphic-section" aria-label="Graphic design">
+    <!-- GRAPHIC DESIGN SECTION -->
+    <section id="graphic" class="graphic-section section" aria-label="Graphic design">
       <div class="container graphic-wrap">
         <div class="graphic-left">
           <h2>Graphic Designing — What we do</h2>
-          <p>From branding to social content: we craft visuals that communicate and convert. Quick mockups, multiple revisions, source files provided on request.</p>
+          <p>From branding to social content: we craft visuals that communicate and convert. Quick mockups, multiple revisions and source files provided on request.</p>
 
           <ul class="graphic-list">
             <li><strong>Logo & Brand Kit</strong> — scalable vector logo, color palette, fonts</li>
@@ -156,45 +205,62 @@
           <a href="#portfolio" class="btn btn-primary-outline">See Portfolio</a>
         </div>
 
-        <div class="graphic-right" aria-hidden="false">
-          <div class="graphic-gallery">
-            <!-- placeholders for your three uploaded images -->
-            <img src="img1.jpeg" alt="Graphic sample 1 - poster" loading="lazy">
-            <img src="img2.jpeg" alt="Graphic sample 2 - social creative" loading="lazy">
-            <img src="img3.jpeg" alt="Graphic sample 3 - branding" loading="lazy">
+        <div class="graphic-right">
+          <div class="graphic-gallery mobile-swipe" aria-hidden="false">
+            <img src="img1.jpeg" alt="Graphic sample 1" loading="lazy">
+            <img src="img2.jpeg" alt="Graphic sample 2" loading="lazy">
+            <img src="img3.jpeg" alt="Graphic sample 3" loading="lazy">
           </div>
         </div>
       </div>
     </section>
 
-    <!-- PORTFOLIO (swipeable on mobile) -->
+    <!-- DARK / HIGHLIGHT BAND (premium section) -->
+    <section id="highlight" class="highlight-band section" aria-label="Why choose us">
+      <div class="container highlight-inner">
+        <div class="highlight-item">
+          <strong>Fast Turnaround</strong>
+          <p>Clear timelines and on-time delivery for every project.</p>
+        </div>
+        <div class="highlight-item">
+          <strong>Source Files</strong>
+          <p>We deliver source files (AI/PSD/INDD) on request with revisions.</p>
+        </div>
+        <div class="highlight-item">
+          <strong>Quality Assurance</strong>
+          <p>Proofreading and QA checks for every deliverable.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PORTFOLIO -->
     <section id="portfolio" class="section" aria-label="Portfolio">
       <div class="container">
         <div class="section-head">
           <h2>Portfolio</h2>
-          <p>Selected works — thumbnails are clickable to view larger. (Lightbox available)</p>
+          <p>Selected works — tap thumbnails to view larger.</p>
         </div>
 
-        <div class="portfolio-grid" role="list">
-          <figure class="portfolio-item" role="listitem">
-            <img src="img1.jpeg" alt="Portfolio poster 1" loading="lazy" data-full="img1.jpeg">
+        <div class="portfolio-grid">
+          <figure class="portfolio-item">
+            <img src="img1.jpeg" alt="Poster / Banner — Social Campaign" loading="lazy" data-full="img1.jpeg">
             <figcaption>Poster / Banner — Social Campaign</figcaption>
           </figure>
 
-          <figure class="portfolio-item" role="listitem">
-            <img src="img2.jpeg" alt="Portfolio creative 2" loading="lazy" data-full="img2.jpeg">
+          <figure class="portfolio-item">
+            <img src="img2.jpeg" alt="Social Media Creative — Promo" loading="lazy" data-full="img2.jpeg">
             <figcaption>Social Media Creative — Promo</figcaption>
           </figure>
 
-          <figure class="portfolio-item" role="listitem">
-            <img src="img3.jpeg" alt="Portfolio brand 3" loading="lazy" data-full="img3.jpeg">
+          <figure class="portfolio-item">
+            <img src="img3.jpeg" alt="Branding / Layout — Example" loading="lazy" data-full="img3.jpeg">
             <figcaption>Branding / Layout — Example</figcaption>
           </figure>
         </div>
       </div>
     </section>
 
-    <!-- PROCESS / HOW IT WORKS -->
+    <!-- PROCESS -->
     <section id="process" class="section" aria-label="How it works">
       <div class="container">
         <div class="section-head">
@@ -203,18 +269,10 @@
         </div>
 
         <ol class="process-steps">
-          <li>
-            <strong>1. Share details</strong> — send files, examples or brief via WhatsApp / email.
-          </li>
-          <li>
-            <strong>2. Free estimate</strong> — we reply with price & timeline.
-          </li>
-          <li>
-            <strong>3. Work & revise</strong> — we deliver drafts and revise until you are happy.
-          </li>
-          <li>
-            <strong>4. Final files</strong> — print-ready PDFs and source files handed over.
-          </li>
+          <li><strong>1. Share details</strong> — files, examples or brief via WhatsApp / email.</li>
+          <li><strong>2. Free estimate</strong> — we reply with price & timeline.</li>
+          <li><strong>3. Work & revise</strong> — we deliver drafts and revise until you are happy.</li>
+          <li><strong>4. Final files</strong> — print-ready PDFs and source files handed over.</li>
         </ol>
       </div>
     </section>
@@ -232,10 +290,7 @@
             <h3>Basic</h3>
             <div class="price">₹199</div>
             <p>Per page / simple typing jobs</p>
-            <ul>
-              <li>Plain typing</li>
-              <li>Proofreading</li>
-            </ul>
+            <ul><li>Plain typing</li><li>Proofreading</li></ul>
             <a class="btn btn-outline" href="#contact">Order Basic</a>
           </div>
 
@@ -243,10 +298,7 @@
             <h3>Pro</h3>
             <div class="price">₹499</div>
             <p>Design + formatting for 1 page</p>
-            <ul>
-              <li>Styled layout</li>
-              <li>One round of revision</li>
-            </ul>
+            <ul><li>Styled layout</li><li>One round of revision</li></ul>
             <a class="btn btn-primary" href="#contact">Order Pro</a>
           </div>
 
@@ -254,10 +306,7 @@
             <h3>Design Pack</h3>
             <div class="price">₹999</div>
             <p>Logo or social pack</p>
-            <ul>
-              <li>Logo + 3 social designs</li>
-              <li>Source files</li>
-            </ul>
+            <ul><li>Logo + 3 social designs</li><li>Source files</li></ul>
             <a class="btn btn-outline" href="#contact">Order Design</a>
           </div>
         </div>
@@ -269,7 +318,7 @@
       <div class="container">
         <div class="section-head">
           <h2>What clients say</h2>
-          <p>Real feedback from real customers.</p>
+          <p>Real feedback from customers.</p>
         </div>
 
         <div class="testimonials-grid">
@@ -286,69 +335,26 @@
       </div>
     </section>
 
-    <!-- FAQ (accordion) -->
-    <section id="faq" class="section" aria-label="Frequently asked questions">
+    <!-- FAQ -->
+    <section id="faq" class="section" aria-label="FAQ">
       <div class="container">
-        <div class="section-head">
-          <h2>FAQ</h2>
-          <p>Common questions answered quickly.</p>
-        </div>
+        <div class="section-head"><h2>FAQ</h2><p>Common questions answered.</p></div>
 
         <div class="faq-list">
-          <details class="faq-item">
-            <summary>How do I send files?</summary>
-            <div class="faq-body">
-              Send files via WhatsApp, email or cloud link (Google Drive/Dropbox). Accepts images, PDF, DOCX.
-            </div>
-          </details>
-
-          <details class="faq-item">
-            <summary>What formats do you deliver?</summary>
-            <div class="faq-body">
-              We deliver Word, PDF, JPG, PNG, and source files (AI/PSD/INDD) on request.
-            </div>
-          </details>
-
-          <details class="faq-item">
-            <summary>Can you do large bulk projects?</summary>
-            <div class="faq-body">
-              Yes — we handle bulk typing and DTP with dedicated timelines and sample approvals.
-            </div>
-          </details>
+          <details class="faq-item"><summary>How do I send files?</summary><div class="faq-body">Send files via WhatsApp, email or cloud link (Google Drive/Dropbox). Accepts images, PDF, DOCX.</div></details>
+          <details class="faq-item"><summary>What formats do you deliver?</summary><div class="faq-body">Word, PDF, JPG, PNG, and source files (AI/PSD/INDD) on request.</div></details>
+          <details class="faq-item"><summary>Can you do bulk projects?</summary><div class="faq-body">Yes — we handle bulk typing and DTP with dedicated timelines and sample approvals.</div></details>
         </div>
       </div>
     </section>
 
-    <!-- SIMPLE BLOG PREVIEW / RESOURCES -->
-    <section id="blog" class="section" aria-label="Resources">
-      <div class="container">
-        <div class="section-head">
-          <h2>Resources & Tips</h2>
-          <p>Short guides to prepare your files for printing and social media.</p>
-        </div>
-
-        <div class="blog-grid">
-          <article class="blog-card">
-            <h4>How to prepare a manuscript for print</h4>
-            <p class="muted">Quick checklist to make your book print-ready.</p>
-          </article>
-
-          <article class="blog-card">
-            <h4>Top 5 sizes for social media posts</h4>
-            <p class="muted">Get the right size for Instagram, Facebook and WhatsApp.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- NEWSLETTER -->
+    <!-- Newsletter -->
     <section id="newsletter" class="section" aria-label="Newsletter">
       <div class="container">
         <div class="newsletter">
           <h3>Stay updated</h3>
-          <p>Get occasional tips and offers. No spam.</p>
-          <form id="newsletterForm" class="newsletter-form">
-            <label for="newsletterEmail" class="sr-only">Email</label>
+          <p>Get occasional tips and offers — no spam.</p>
+          <form id="newsletterForm" class="newsletter-form" aria-label="Subscribe to newsletter">
             <input id="newsletterEmail" type="email" placeholder="you@example.com" required>
             <button type="submit" class="btn btn-primary">Subscribe</button>
           </form>
@@ -361,7 +367,7 @@
       <div class="container contact-grid">
         <div class="contact-card">
           <h2>Contact & Quote</h2>
-          <p>Send project details and preferred deadline. We’ll reply with a transparent quote and timeline.</p>
+          <p>Send project details and preferred deadline. We'll reply with a transparent quote and timeline.</p>
 
           <form id="contactForm" class="form" novalidate>
             <label for="name">Name</label>
@@ -388,7 +394,7 @@
             <p>Phone / WhatsApp: <a href="tel:+919785723624">+91 97857 23624</a></p>
             <p>Email: <a href="mailto:angeldtp54@gmail.com">angeldtp54@gmail.com</a></p>
             <p>Location: Piprali Road, Sikar (Raj.)</p>
-            <p>Website: <a href="https://www.angeldp.in" target="_blank" rel="noopener noreferrer">angeldp.in</a></p>
+            <p>Website: <a href="https://www.angeldp.in" target="_blank" rel="noopener">angeldp.in</a></p>
           </div>
 
           <div class="info-block">
@@ -404,13 +410,20 @@
     </section>
   </main>
 
-  <!-- FOOTER -->
+  <!-- Sticky mobile contact bar (only on small screens) -->
+  <div class="sticky-contact mobile-only" role="region" aria-label="Quick contact">
+    <a class="sticky-item" href="tel:+919785723624" aria-label="Call us">📞 Call</a>
+    <a class="sticky-item" href="https://wa.me/919785723624" aria-label="WhatsApp" target="_blank" rel="noopener">💬 WhatsApp</a>
+    <a class="sticky-item" href="#contact" aria-label="Contact form">✉️ Quote</a>
+  </div>
+
+  <!-- Footer -->
   <footer class="site-footer" role="contentinfo">
     <div class="container footer-grid">
       <div class="footer-brand">
         <div class="brand-mark">🟠✒️</div>
         <div>
-          <strong>Angel DTP Operators</strong><br>
+          <strong>Angel DTP</strong><br>
           <small>Desktop Publishing & Graphic Design</small>
         </div>
       </div>
@@ -423,21 +436,25 @@
       </nav>
 
       <div class="footer-contact">
-        <p>&copy; <span id="year"></span> AngelDTP.in — All rights reserved.</p>
+        <p>© <span id="year"></span> AngelDTP.in — All rights reserved.</p>
       </div>
     </div>
   </footer>
 
-  <!-- FLOATING WHATSAPP CTA -->
-  <a class="floating-whatsapp" href="https://wa.me/919785723624?text=Hi%20AngelDTP%20I%20need%20a%20quote" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
-    💬
-  </a>
-
-  <!-- Lightbox placeholder (script will use) -->
+  <!-- Lightbox -->
   <div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-label="Image preview"></div>
 
-  <!-- Scripts -->
+  <!-- Small inline helpful note for devs (safe to ignore in production) -->
+  <!--
+    Notes:
+    - Mobile-only elements have class "mobile-only".
+    - Elements hidden on preview have class "more-hide".
+    - Drawer is #sideDrawer and controlled by #drawerToggle / #drawerClose.
+    - Sticky mobile contact is .sticky-contact.
+    - Portfolio images include data-full for lightbox.
+  -->
+
+  <!-- Script (we'll update script.js to match new UI) -->
   <script defer src="script.js"></script>
 </body>
 </html>
-
