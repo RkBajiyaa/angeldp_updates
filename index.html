@@ -4,129 +4,143 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Angel DTP Operators — Desktop Publishing & Graphic Design</title>
-  <meta name="description" content="Angel DTP Operators - Typing, DTP, Book layout, Graphic Design, Video Editing, and more. Professional, fast and affordable." />
+  <meta name="description" content="Angel DTP Operators — professional DTP, typing, book layout, graphic design, and video editing. Fast, accurate and affordable." />
 
-  <!-- Fonts -->
+  <!-- Fonts (change if you prefer) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
-  <!-- CSS -->
+  <!-- Main stylesheet -->
   <link rel="stylesheet" href="style.css" />
-
-  <!-- small theme color meta -->
-  <meta name="theme-color" content="#3b2eb8" />
+  <meta name="theme-color" content="#F29B45" />
 </head>
 <body>
-  <!-- Skip link for keyboard users -->
+  <!-- Skip link for a11y -->
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- NAV -->
-  <header class="site-header">
+  <!-- SITE HEADER / NAV -->
+  <header class="site-header" role="banner">
     <div class="container header-inner">
-      <a class="brand" href="#">
-        <!-- Replace with <img src="logo.png"> if you have a proper logo -->
-        <div class="brand-mark" aria-hidden="true">🌈✒️</div>
+      <a class="brand" href="/" aria-label="Angel DTP home">
+        <!-- replace with <img src="logo.svg" alt="Angel DTP"> for real logo -->
+        <div class="brand-mark" aria-hidden="true">🟠✒️</div>
         <div class="brand-text">
           <span class="brand-name">Angel DTP</span>
           <span class="brand-sub">Operators</span>
         </div>
       </a>
 
-      <button id="navToggle" class="nav-toggle" aria-expanded="false" aria-controls="primaryNav" aria-label="Toggle navigation">
-        <span class="hamburger"></span>
+      <button id="navToggle" class="nav-toggle" aria-expanded="false" aria-controls="primaryNav" aria-label="Open navigation">
+        <span class="hamburger" aria-hidden="true"></span>
       </button>
 
-      <nav id="primaryNav" class="primary-nav" role="navigation" aria-label="Primary">
+      <nav id="primaryNav" class="primary-nav" role="navigation" aria-label="Primary navigation" aria-hidden="true">
         <ul class="nav-list">
-          <li><a href="#home" class="nav-link">Home</a></li>
-          <li><a href="#services" class="nav-link">Services</a></li>
-          <li><a href="#graphic" class="nav-link">Graphic Design</a></li>
-          <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
-          <li><a href="#contact" class="nav-link">Contact</a></li>
+          <li><a class="nav-link" href="#home">Home</a></li>
+          <li><a class="nav-link" href="#services">Services</a></li>
+          <li><a class="nav-link" href="#graphic">Graphic Design</a></li>
+          <li><a class="nav-link" href="#portfolio">Portfolio</a></li>
+          <li><a class="nav-link" href="#pricing">Pricing</a></li>
+          <li><a class="nav-link" href="#contact">Contact</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <!-- HERO -->
-  <main id="main">
-    <section id="home" class="hero">
+  <!-- MAIN -->
+  <main id="main" role="main">
+    <!-- HERO -->
+    <section id="home" class="hero" aria-label="Hero">
       <div class="container hero-grid">
         <div class="hero-copy">
+          <div class="eyebrow badge-accent">Angel DTP — Operators</div>
           <h1 class="hero-title">Design. Type. Publish.</h1>
-          <p class="hero-lead">Fast, accurate desktop publishing and creative design — English & Hindi typing, book layout, logos, banners, social media creatives and more.</p>
+          <p class="hero-lead">Desktop publishing, typing, book layout, branding and social creatives — accurate, print-ready and delivered on time. English & Hindi support.</p>
+
           <div class="hero-cta">
             <a href="#contact" class="btn btn-primary">Get a Quote</a>
-            <a href="#services" class="btn btn-outline">View Services</a>
+            <a href="#services" class="btn btn-outline">Explore Services</a>
           </div>
 
-          <ul class="hero-features">
-            <li>✅ Print-ready layouts</li>
-            <li>✅ Social creatives & branding</li>
-            <li>✅ Quick turnaround & revisions</li>
+          <ul class="hero-benefits" aria-hidden="true">
+            <li>✅ Print-ready PDFs</li>
+            <li>✅ Fast turnaround & revisions</li>
+            <li>✅ Source files on request</li>
           </ul>
+
+          <!-- quick contact -->
+          <div class="hero-quick">
+            <a href="tel:+919785723624" class="hero-phone" aria-label="Call Angel DTP">📞 +91 97857 23624</a>
+            <a href="mailto:angeldtp54@gmail.com" class="hero-mail">✉️ angeldtp54@gmail.com</a>
+          </div>
         </div>
 
         <div class="hero-visual">
-          <!-- you can replace this box with a hero image -->
-          <div class="hero-card">
-            <img src="img1.jpeg" alt="Example design thumbnail" />
+          <div class="hero-card" role="img" aria-label="Design sample">
+            <!-- keep a relevant image; fallback to img1 -->
+            <img src="img1.jpeg" alt="Sample graphic design" loading="lazy">
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SERVICES -->
-    <section id="services" class="section">
+    <!-- SERVICES (expanded) -->
+    <section id="services" class="section" aria-label="Services">
       <div class="container">
         <div class="section-head">
           <h2>Services</h2>
-          <p>We handle everything from typing and DTP to full graphic design and video editing.</p>
+          <p>We provide end-to-end DTP and creative services. Small jobs or bulk projects — we handle both.</p>
         </div>
 
-        <div class="cards-grid">
-          <article class="card">
+        <div class="cards-grid" role="list">
+          <!-- Card 1 -->
+          <article class="card" role="listitem">
             <div class="card-icon">⌨️</div>
             <h3>English & Hindi Typing</h3>
-            <p>Accurate typing of scanned or handwritten pages, exam papers, forms and more — delivered in Word or PDF.</p>
+            <p>Fast, accurate typing of scanned pages, handwritten notes, and recorded audio — delivered in Word or PDF.</p>
           </article>
 
-          <article class="card">
+          <!-- Card 2 -->
+          <article class="card" role="listitem">
             <div class="card-icon">📄</div>
             <h3>Paper / Document Typing</h3>
-            <p>Neat, proofread documents with consistent styling — academic, legal, business or custom formats.</p>
+            <p>Proofread documents with consistent formatting — academic, legal, business or custom templates.</p>
           </article>
 
-          <article class="card">
+          <!-- Card 3 -->
+          <article class="card" role="listitem">
             <div class="card-icon">📚</div>
             <h3>Book Layout & Publishing</h3>
-            <p>Manuscript formatting, page layout, TOC, index, and print-ready PDFs for publishers and self-publishers.</p>
+            <p>Manuscript formatting, TOC, page layout, cover design and print/eBook preparation.</p>
           </article>
 
-          <article class="card">
-            <div class="card-icon">🎬</div>
-            <h3>Video Editing</h3>
-            <p>Short promo clips, YouTube edits, social-ready formats with captions and simple motion graphics.</p>
-          </article>
-
-          <article class="card">
+          <!-- Card 4 -->
+          <article class="card" role="listitem">
             <div class="card-icon">🖼️</div>
             <h3>Graphic Design</h3>
-            <p>Logos, banners, posters, social media creatives, icons and branding packages — tailored to your audience.</p>
+            <p>Logos, posters, social creatives, banners and brand kits. Quick mockups and source files provided.</p>
           </article>
 
-          <article class="card">
+          <!-- Card 5 -->
+          <article class="card" role="listitem">
+            <div class="card-icon">🎬</div>
+            <h3>Video Editing</h3>
+            <p>Short promo clips, YouTube edits, and social-ready videos with captions and transitions.</p>
+          </article>
+
+          <!-- Card 6 -->
+          <article class="card" role="listitem">
             <div class="card-icon">📊</div>
             <h3>Data Typist & Entry</h3>
-            <p>Bulk data entry and spreadsheet-ready formats with QA checks.</p>
+            <p>Bulk data entry, spreadsheets, and CSV delivery with QA checks.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- DEDICATED GRAPHIC DESIGN SECTION -->
-    <section id="graphic" class="graphic-section">
+    <!-- DEDICATED GRAPHIC DESIGN -->
+    <section id="graphic" class="graphic-section" aria-label="Graphic design">
       <div class="container graphic-wrap">
         <div class="graphic-left">
           <h2>Graphic Designing — What we do</h2>
@@ -134,7 +148,7 @@
 
           <ul class="graphic-list">
             <li><strong>Logo & Brand Kit</strong> — scalable vector logo, color palette, fonts</li>
-            <li><strong>Social Media Templates</strong> — Instagram, Facebook and WhatsApp ready</li>
+            <li><strong>Social Media Templates</strong> — Instagram, Facebook & WhatsApp ready</li>
             <li><strong>Banners & Posters</strong> — print and web optimized</li>
             <li><strong>Thumbnails & Ad Creatives</strong> — attention-grabbing designs</li>
           </ul>
@@ -142,82 +156,245 @@
           <a href="#portfolio" class="btn btn-primary-outline">See Portfolio</a>
         </div>
 
-        <div class="graphic-right">
+        <div class="graphic-right" aria-hidden="false">
           <div class="graphic-gallery">
-            <!-- these are placeholders; you've uploaded these images already -->
-            <img src="img1.jpeg" alt="Graphic sample 1" loading="lazy">
-            <img src="img2.jpeg" alt="Graphic sample 2" loading="lazy">
-            <img src="img3.jpeg" alt="Graphic sample 3" loading="lazy">
+            <!-- placeholders for your three uploaded images -->
+            <img src="img1.jpeg" alt="Graphic sample 1 - poster" loading="lazy">
+            <img src="img2.jpeg" alt="Graphic sample 2 - social creative" loading="lazy">
+            <img src="img3.jpeg" alt="Graphic sample 3 - branding" loading="lazy">
           </div>
         </div>
       </div>
     </section>
 
-    <!-- PORTFOLIO -->
-    <section id="portfolio" class="section">
+    <!-- PORTFOLIO (swipeable on mobile) -->
+    <section id="portfolio" class="section" aria-label="Portfolio">
       <div class="container">
         <div class="section-head">
           <h2>Portfolio</h2>
-          <p>Selected works — click to view larger (lightbox can be added later).</p>
+          <p>Selected works — thumbnails are clickable to view larger. (Lightbox available)</p>
         </div>
 
-        <div class="portfolio-grid">
-          <figure class="portfolio-item">
-            <img src="img1.jpeg" alt="Portfolio poster design 1" loading="lazy">
+        <div class="portfolio-grid" role="list">
+          <figure class="portfolio-item" role="listitem">
+            <img src="img1.jpeg" alt="Portfolio poster 1" loading="lazy" data-full="img1.jpeg">
             <figcaption>Poster / Banner — Social Campaign</figcaption>
           </figure>
 
-          <figure class="portfolio-item">
-            <img src="img2.jpeg" alt="Portfolio social creative 2" loading="lazy">
+          <figure class="portfolio-item" role="listitem">
+            <img src="img2.jpeg" alt="Portfolio creative 2" loading="lazy" data-full="img2.jpeg">
             <figcaption>Social Media Creative — Promo</figcaption>
           </figure>
 
-          <figure class="portfolio-item">
-            <img src="img3.jpeg" alt="Portfolio branding 3" loading="lazy">
-            <figcaption>Branding & Layout — Sample</figcaption>
+          <figure class="portfolio-item" role="listitem">
+            <img src="img3.jpeg" alt="Portfolio brand 3" loading="lazy" data-full="img3.jpeg">
+            <figcaption>Branding / Layout — Example</figcaption>
           </figure>
         </div>
       </div>
     </section>
 
+    <!-- PROCESS / HOW IT WORKS -->
+    <section id="process" class="section" aria-label="How it works">
+      <div class="container">
+        <div class="section-head">
+          <h2>How it works</h2>
+          <p>Simple, transparent process so you know what to expect.</p>
+        </div>
+
+        <ol class="process-steps">
+          <li>
+            <strong>1. Share details</strong> — send files, examples or brief via WhatsApp / email.
+          </li>
+          <li>
+            <strong>2. Free estimate</strong> — we reply with price & timeline.
+          </li>
+          <li>
+            <strong>3. Work & revise</strong> — we deliver drafts and revise until you are happy.
+          </li>
+          <li>
+            <strong>4. Final files</strong> — print-ready PDFs and source files handed over.
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section id="pricing" class="section" aria-label="Pricing">
+      <div class="container">
+        <div class="section-head">
+          <h2>Pricing (starter tiers)</h2>
+          <p>Simple, predictable pricing for common tasks. Need custom pricing? Contact us for a quote.</p>
+        </div>
+
+        <div class="pricing-grid">
+          <div class="pricing-card">
+            <h3>Basic</h3>
+            <div class="price">₹199</div>
+            <p>Per page / simple typing jobs</p>
+            <ul>
+              <li>Plain typing</li>
+              <li>Proofreading</li>
+            </ul>
+            <a class="btn btn-outline" href="#contact">Order Basic</a>
+          </div>
+
+          <div class="pricing-card pricing-featured">
+            <h3>Pro</h3>
+            <div class="price">₹499</div>
+            <p>Design + formatting for 1 page</p>
+            <ul>
+              <li>Styled layout</li>
+              <li>One round of revision</li>
+            </ul>
+            <a class="btn btn-primary" href="#contact">Order Pro</a>
+          </div>
+
+          <div class="pricing-card">
+            <h3>Design Pack</h3>
+            <div class="price">₹999</div>
+            <p>Logo or social pack</p>
+            <ul>
+              <li>Logo + 3 social designs</li>
+              <li>Source files</li>
+            </ul>
+            <a class="btn btn-outline" href="#contact">Order Design</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="testimonials" class="section" aria-label="Testimonials">
+      <div class="container">
+        <div class="section-head">
+          <h2>What clients say</h2>
+          <p>Real feedback from real customers.</p>
+        </div>
+
+        <div class="testimonials-grid">
+          <blockquote class="testimonial">
+            <p>“Fast delivery and clean layouts — saved me hours.”</p>
+            <footer>— Priya S., Author</footer>
+          </blockquote>
+
+          <blockquote class="testimonial">
+            <p>“Great social creatives. The banner boosted our engagement.”</p>
+            <footer>— Rohit K., Small Business</footer>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ (accordion) -->
+    <section id="faq" class="section" aria-label="Frequently asked questions">
+      <div class="container">
+        <div class="section-head">
+          <h2>FAQ</h2>
+          <p>Common questions answered quickly.</p>
+        </div>
+
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>How do I send files?</summary>
+            <div class="faq-body">
+              Send files via WhatsApp, email or cloud link (Google Drive/Dropbox). Accepts images, PDF, DOCX.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>What formats do you deliver?</summary>
+            <div class="faq-body">
+              We deliver Word, PDF, JPG, PNG, and source files (AI/PSD/INDD) on request.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Can you do large bulk projects?</summary>
+            <div class="faq-body">
+              Yes — we handle bulk typing and DTP with dedicated timelines and sample approvals.
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- SIMPLE BLOG PREVIEW / RESOURCES -->
+    <section id="blog" class="section" aria-label="Resources">
+      <div class="container">
+        <div class="section-head">
+          <h2>Resources & Tips</h2>
+          <p>Short guides to prepare your files for printing and social media.</p>
+        </div>
+
+        <div class="blog-grid">
+          <article class="blog-card">
+            <h4>How to prepare a manuscript for print</h4>
+            <p class="muted">Quick checklist to make your book print-ready.</p>
+          </article>
+
+          <article class="blog-card">
+            <h4>Top 5 sizes for social media posts</h4>
+            <p class="muted">Get the right size for Instagram, Facebook and WhatsApp.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEWSLETTER -->
+    <section id="newsletter" class="section" aria-label="Newsletter">
+      <div class="container">
+        <div class="newsletter">
+          <h3>Stay updated</h3>
+          <p>Get occasional tips and offers. No spam.</p>
+          <form id="newsletterForm" class="newsletter-form">
+            <label for="newsletterEmail" class="sr-only">Email</label>
+            <input id="newsletterEmail" type="email" placeholder="you@example.com" required>
+            <button type="submit" class="btn btn-primary">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
     <!-- CONTACT -->
-    <section id="contact" class="section contact-section">
+    <section id="contact" class="section contact-section" aria-label="Contact">
       <div class="container contact-grid">
         <div class="contact-card">
           <h2>Contact & Quote</h2>
-          <p>Send project details and deadline. We'll reply with a transparent quote and timeline.</p>
+          <p>Send project details and preferred deadline. We’ll reply with a transparent quote and timeline.</p>
 
-          <form id="contactForm" class="form">
+          <form id="contactForm" class="form" novalidate>
             <label for="name">Name</label>
             <input id="name" name="name" type="text" placeholder="Your name" required>
 
             <label for="email">Email</label>
             <input id="email" name="email" type="email" placeholder="you@example.com" required>
 
-            <label for="message">Project details</label>
-            <textarea id="message" name="message" rows="5" placeholder="Describe the task, pages, formats, deadline..." required></textarea>
+            <label for="task">Project details</label>
+            <textarea id="task" name="task" rows="4" placeholder="Describe the task, pages, formats, deadline..." required></textarea>
 
             <div class="form-row">
               <button type="submit" class="btn btn-primary">Send Message</button>
               <a class="btn btn-outline" href="mailto:angeldtp54@gmail.com">Email Us</a>
             </div>
 
-            <p class="form-note">Typical response within 24 hours. Provide sample files for faster quotes.</p>
+            <p class="form-note">Typical response within 24 hours. Attach sample files for faster quotes.</p>
           </form>
         </div>
 
-        <aside class="contact-info">
+        <aside class="contact-info" aria-label="Contact details">
           <div class="info-block">
             <h3>Quick Contact</h3>
-            <p>Phone / WhatsApp: <a href="tel:+919461995563">+91 94619 95563</a></p>
+            <p>Phone / WhatsApp: <a href="tel:+919785723624">+91 97857 23624</a></p>
             <p>Email: <a href="mailto:angeldtp54@gmail.com">angeldtp54@gmail.com</a></p>
-            <p>Website: <a href="https://www.angeldp.in" target="_blank" rel="noopener noreferrer">www.angeldp.in</a></p>
+            <p>Location: Piprali Road, Sikar (Raj.)</p>
+            <p>Website: <a href="https://www.angeldp.in" target="_blank" rel="noopener noreferrer">angeldp.in</a></p>
           </div>
 
           <div class="info-block">
             <h3>Why choose us?</h3>
             <ul>
-              <li>Fast delivery</li>
+              <li>Quick delivery</li>
               <li>Source files & revisions</li>
               <li>Affordable pricing</li>
             </ul>
@@ -228,17 +405,17 @@
   </main>
 
   <!-- FOOTER -->
-  <footer class="site-footer">
+  <footer class="site-footer" role="contentinfo">
     <div class="container footer-grid">
       <div class="footer-brand">
-        <div class="brand-mark">🌈✒️</div>
+        <div class="brand-mark">🟠✒️</div>
         <div>
           <strong>Angel DTP Operators</strong><br>
           <small>Desktop Publishing & Graphic Design</small>
         </div>
       </div>
 
-      <nav class="footer-nav" aria-label="Footer">
+      <nav class="footer-nav" aria-label="Footer navigation">
         <a href="#home">Home</a>
         <a href="#services">Services</a>
         <a href="#portfolio">Portfolio</a>
@@ -246,17 +423,21 @@
       </nav>
 
       <div class="footer-contact">
-        <p>© <span id="year"></span> AngelDTP.in — All rights reserved.</p>
+        <p>&copy; <span id="year"></span> AngelDTP.in — All rights reserved.</p>
       </div>
     </div>
   </footer>
 
-  <!-- Floating WhatsApp CTA -->
-  <a class="floating-whatsapp" href="https://wa.me/919461995563?text=Hello%20AngelDTP!%20I%27m%20interested%20in%20your%20services." target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+  <!-- FLOATING WHATSAPP CTA -->
+  <a class="floating-whatsapp" href="https://wa.me/919785723624?text=Hi%20AngelDTP%20I%20need%20a%20quote" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
     💬
   </a>
 
-  <!-- JS -->
+  <!-- Lightbox placeholder (script will use) -->
+  <div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-label="Image preview"></div>
+
+  <!-- Scripts -->
   <script defer src="script.js"></script>
 </body>
 </html>
+
